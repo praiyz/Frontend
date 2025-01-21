@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets";
 import "./Navbar.css";
-const Navbar = () => {
+import { Link } from "react-router-dom";
+
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
 
   return (
@@ -9,31 +12,35 @@ const Navbar = () => {
       <img src={assets.logo} alt="" className="logo" /> {/* logo */}
       <ul className="navbar-menu">
         {/* menu */}
-        <li
+        <Link
+          to="/"
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
           Home
-        </li>{" "}
+        </Link>{" "}
         {/* menu items */}
-        <li
+        <a
+          href="#explore-menu"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           Menu
-        </li>
-        <li
+        </a>
+        <a
+          href="#app-download"
           onClick={() => setMenu("mobile-app")}
           className={menu === "mobile-app" ? "active" : ""}
         >
           Mobile-app
-        </li>
-        <li
+        </a>
+        <a
+          href="#footer"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
           Contact us
-        </li>
+        </a>
       </ul>
       <div className="navbar-right">
         {" "}
@@ -43,7 +50,7 @@ const Navbar = () => {
           <img src={assets.basket_icon} alt="" />
           <div className="dot"></div> {/* basket items */}
         </div>
-        <button>Sign in</button>
+        <button onClick={() => setShowLogin(true)}>Sign in</button>
       </div>
     </div>
   );
