@@ -8,7 +8,7 @@ import LoginPopup from "./components/loginPopup/LoginPopup.jsx";
 import { useState } from "react";
 
 const App = () => {
-const [showLogin , setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <>
