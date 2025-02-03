@@ -7,7 +7,7 @@ const StoreContextsProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
-  const url = "https://fullstack-food-delievery-app.onrender.com";
+  const url = "https://fullstack-food-delievery-app-1.onrender.com";
 
   // Add to Cart
   const addToCart = async (itemId) => {
